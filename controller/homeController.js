@@ -51,9 +51,9 @@ module.exports.addUser = async (req, res) => {
           about: req.body.about,
           avatar: profileImage,
         },
-        (e) => {
-          if (e) {
-            console.log(e);
+        (err) => {
+          if (err) {
+            console.log(err);
             return false;
           }
           return res.redirect("/login");
@@ -85,9 +85,7 @@ module.exports.deleteUser = async (req, res) => {
 module.exports.delete = async (req, res) => {
   try {
     const record = await Admin.findById(req.params.id);
-    console.log(record);
     const avatar = record.avatar;
-    console.log(avatar);
     fs.unlinkSync(path.join(__dirname, "..", avatar));
     Admin.findByIdAndDelete(req.params.id, (err) => {
       if (err) {
@@ -255,7 +253,6 @@ module.exports.uploadImg = (req, res) => {
 module.exports.deleteGalleryImg = async (req, res) => {
   try {
     const image = await Gallery.findById(req.params.id);
-    // console.log(image);
     const gImg = image.gallery;
     fs.unlinkSync(path.join(__dirname, "..", gImg));
     Gallery.findByIdAndDelete(req.params.id,(err)=>{
