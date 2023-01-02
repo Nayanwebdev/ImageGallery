@@ -2,7 +2,7 @@
     <div class="form_inner">
       <div class="personal_datail bg-dark p-5 rounded border border-primary">
         <form action="/updatePostUser" method="post" enctype="multipart/form-data">
-            <input type="text" name="user_id" value="<%=admin.id%>">
+            <input type="hidden" name="user_id" value="<%=admin.id%>">
           <div class="form-group">
             <input type="text" name="userName" value="<%=admin.userName %>" class="form-control" />
           </div>
@@ -20,7 +20,7 @@
           </div>
           <div class="form-group">
             <label for="password">Designation</label>
-            <input type="text" name="designation" value="<%=admin.designation %>" class="form-control" />
+            <input type="password" name="designation" value="<%=admin.designation %>" class="form-control" />
           </div>
           <div class="form-group">
             <label for="password">About</label>

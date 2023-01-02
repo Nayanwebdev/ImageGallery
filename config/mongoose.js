@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.set("strictQuery", false);
-mongoose.connect(process.env.MONGODB);
+mongoose.connect(process.env.MONGODB,{ useNewUrlParser: true });
 
 const db = mongoose.connection;
 
