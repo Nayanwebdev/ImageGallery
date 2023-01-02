@@ -5,7 +5,7 @@
         <div class="card">
           <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height: 200px">
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px">
-              <img src="<%= locals.user.avatar %>" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1" />
+              <img src="<%= locals.user.avatar %>" alt="avatar" class="img-fluid img-thumbnail mt-4 mb-2 h-100 object-fit-cover" style="width: 150px; z-index: 1" />
               <div class="d-flex gap-2">
                 <a href="/update/<%=user.id%>" type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1">Edit profile</a>
                 <a href="/delete/<%=user.id%>" type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1">Delete profile</a>
