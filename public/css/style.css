@@ -1,0 +1,240 @@
+main {
+  margin-top: 56px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap");
+body {
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --color-white: #f3f3f3;
+  --color-darkorange: #e26a2c;
+  --color-darkorange-alpha: rgba(210, 105, 30, 0.8);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus-visible,
+input:focus-visible,
+input:focus,
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-textarea:focus-visible {
+  outline: none;
+}
+.d-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.about_para{
+  text-align: justify;
+  text-indent: 20px;
+}
+
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #84fab0;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+  }
+/*** css ***/
+nav {
+  z-index: 9999;
+}
+.navbar-nav .nav-item:hover {
+  background-color: rgba(180, 190, 203, 0.4);
+}
+
+.add_data_form {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.description {
+  text-align: center;
+}
+
+/* alternativa mobile friendly background-attachment: fixed */
+.form_block::before {
+  content: "";
+  position: fixed;
+  top: 56px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkorange);
+  background-image: linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(255, 127, 80, 0.7)), url(https://img.freepik.com/foto-gratis/confianza-inteligente-empresaria-asiatica-empresaria-nueva-propietaria-pequena-empresa-mujer-negocios-ropa-informal-inteligente-sonrisa-uso-mano-tableta-comprobacion-inventario-oficina-sala-exposicion-fondo-diurno_609648-342.jpg?w=1060&t=st=1668104389~exp=1668104989~hmac=26d0d49308d994e4a86541e33281addbb66f5907328f1bfe3de2bfcad798b113);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+button {
+  border: none;
+}
+
+.description {
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.clue {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+  color: #e4e4e4;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form_inner {
+  max-width: 500px;
+  margin-left: 30px;
+  padding-block: 80px;
+}
+.personal_datail {
+  padding: 40px 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+.personal_datail label {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--color-white);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2.375rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-radio,
+.input-checkbox {
+  display: inline-block;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.625rem;
+  border: 0;
+  border-radius: 0.25rem;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: #c9d5e7;
+  color: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.submit-button:hover {
+  background-color: #b5c1d3;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f6d365;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+}
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #fbc2eb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
+}
+
+.register_block label {
+  color: #fff;
+}
+
+.form-group .form-control {
+  width: 100%;
+}
+
+.gallery_img-box {
+  position: relative;
+}
+.gallery_img-box a {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 12px;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 1px solid;
+  border-radius: 6px;
+  appearance: none;
+  color: var(--color-btn-text);
+  background-color: var(--color-btn-bg);
+  border-color: var(--color-btn-border);
+  box-shadow: var(--color-btn-shadow),var(--color-btn-inset-shadow);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color,background-color,box-shadow,border-color;
+}
+.gallery_img-box a i {
+  font-weight: 600;
+}

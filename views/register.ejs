@@ -1,0 +1,47 @@
+<div class="form_block">
+  <div class="form_inner">
+    <div class="personal_datail bg-dark p-5 rounded border border-primary">
+      <p class="text-center h1 fw-bold mb-5 mx-1 text-white mt-3">CREATE AN ACCOUNT</p>  
+      <form action="/addUser" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="userName">name</label>
+          <input type="text" name="userName" class="form-control" placeholder="Enter Your Name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">email</label>
+          <input type="email" name="email" class="form-control" autocomplete="true" placeholder="Enter Your Email" />
+        </div>
+        <div class="form-group">
+          <label for="password">password</label>
+          <input type="text" name="password" class="form-control" placeholder="Enter Your Email" />
+        </div>
+        <div class="form-group">
+          <label for="password">City</label>
+          <input type="text" name="city" class="form-control" placeholder="Enter Your city" />
+        </div>
+        <div class="form-group">
+          <label for="password">Designation</label>
+          <input type="text" name="designation" class="form-control" placeholder="Enter Your Designation" />
+        </div>
+        <div class="form-group">
+          <label for="password">About</label>
+          <input type="text" name="about" class="form-control" placeholder="Enter Your about" />
+        </div>
+        <div class="form-group">
+          <label for="Avtar">user image</label>
+          <input type="file" name="avatar" class="form-control" id="forFile" />
+        </div>
+        <div class="form-group">
+          <button type="submit" name="submit" class="submit-button gradient-custom-4 ">Register</button>
+        </div>
+      </form>
+      <div class="text-center mt-5">
+        <p class="text-center text-muted mt-5 mb-0">
+          Have already an account? <a href="/login" class="fw-bold text-white"><u>Login here</u></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,46 @@
+<div class="form_block">
+    <div class="form_inner">
+      <div class="personal_datail bg-dark p-5 rounded border border-primary">
+        <form action="/updatePostUser" method="post" enctype="multipart/form-data">
+            <input type="text" name="user_id" value="<%=admin.id%>">
+          <div class="form-group">
+            <input type="text" name="userName" value="<%=admin.userName %>" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input type="email" name="email" value="<%=admin.email %>" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="password">password</label>
+            <input type="text" name="password" value="<%=admin.password %>" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="password">City</label>
+            <input type="text" name="city" value="<%=admin.city %>" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="password">Designation</label>
+            <input type="text" name="designation" value="<%=admin.designation %>" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="password">About</label>
+            <input type="text" name="about" value="<%=admin.about %>" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="Avtar">user image</label>
+            <img src="<%=admin.avatar %>" alt="avatar" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1" />
+            <input type="file" name="avatar" class="form-control" id="forFile" />
+          </div>
+          <div class="form-group">
+            <button type="submit" name="submit" class="submit-button">Update</button>
+          </div>
+        </form>
+        <div class="text-center mt-5">
+          <a href="/login" class="btn btn-dark"> Login </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
