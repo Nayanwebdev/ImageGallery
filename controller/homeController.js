@@ -16,7 +16,7 @@ module.exports.login = (req, res) => {
 };
 module.exports.homepage = async (req, res) => {
   try {
-    const gallery = await Gallery.find({userId:req.user.id}).sort({_id: -1});    
+    const gallery = await Gallery.find({ userId: req.user.id }).sort({ _id: -1 });
     res.render("dashboard", { images: gallery });
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -123,7 +123,9 @@ module.exports.updatePostUser = async (req, res) => {
             return false;
           }
           if (admin.avatar) {
-            fs.unlinkSync(path.join(__dirname, "..", admin.avatar));
+            if(fs.existsSync(path.join(__dirname, "..", admin.avatar))){
+              fs.unlinkSync(path.join(__dirname, "..", admin.avatar));
+            }
           }
           if (req.file) {
             var newAvatar = Admin.avatarPath + "/" + req.file.filename;
@@ -216,7 +218,6 @@ module.exports.uploadGallery = async (req, res) => {
   }
 };
 
-
 module.exports.uploadImg = (req, res) => {
   Gallery.uploadAvtar(req, res, (err) => {
     if (err) {
@@ -227,7 +228,7 @@ module.exports.uploadImg = (req, res) => {
       const results = images.map((image) => {
         let uploadImgs = new Gallery({
           gallery: Gallery.galleryPath + "/" + image.filename,
-          userId:req.user.id
+          userId: req.user.id,
         });
         return uploadImgs
           .save()
@@ -254,14 +255,15 @@ module.exports.deleteGalleryImg = async (req, res) => {
   try {
     const image = await Gallery.findById(req.params.id);
     const gImg = image.gallery;
+    console.log(gImg);
     fs.unlinkSync(path.join(__dirname, "..", gImg));
-    Gallery.findByIdAndDelete(req.params.id,(err)=>{
-      if(err) {
+    Gallery.findByIdAndDelete(req.params.id, (err) => {
+      if (err) {
         console.log("error deleting image");
         return false;
       }
-      return res.redirect("/dashboard")
-    })
+      return res.redirect("/dashboard");
+    });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }
