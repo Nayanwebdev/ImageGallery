@@ -86,7 +86,9 @@ module.exports.delete = async (req, res) => {
   try {
     const record = await Admin.findById(req.params.id);
     const avatar = record.avatar;
-    fs.unlinkSync(path.join(__dirname, "..", avatar));
+    if(fs.existsSync(path.join(__dirname, "..", avatar))){
+      fs.unlinkSync(path.join(__dirname, "..", avatar));
+    }
     Admin.findByIdAndDelete(req.params.id, (err) => {
       if (err) {
         console.log("record not deleted");
@@ -256,7 +258,10 @@ module.exports.deleteGalleryImg = async (req, res) => {
     const image = await Gallery.findById(req.params.id);
     const gImg = image.gallery;
     console.log(gImg);
-    fs.unlinkSync(path.join(__dirname, "..", gImg));
+    if(fs.existsSync(path.join(__dirname, "..", gImg))){
+      fs.unlinkSync(path.join(__dirname, "..", gImg));
+    }
+    // fs.unlinkSync(path.join(__dirname, "..", gImg));
     Gallery.findByIdAndDelete(req.params.id, (err) => {
       if (err) {
         console.log("error deleting image");
