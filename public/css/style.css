@@ -59,7 +59,7 @@ input::-webkit-inner-spin-button {
   text-align: justify;
   text-indent: 20px;
 }
-.main{
+main{
   min-height: 100vh;
 }
 .gradient-custom-4 {
