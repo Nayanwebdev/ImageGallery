@@ -86,9 +86,21 @@ module.exports.delete = async (req, res) => {
   try {
     const record = await Admin.findById(req.params.id);
     const avatar = record.avatar;
-    if(fs.existsSync(path.join(__dirname, "..", avatar))){
+    if (fs.existsSync(path.join(__dirname, "..", avatar))) {
       fs.unlinkSync(path.join(__dirname, "..", avatar));
     }
+    const galleries = await Gallery.find({ userId: req.params.id });
+    galleries.forEach((e) => {
+      console.log(e.gallery);
+      if (fs.existsSync(path.join(__dirname, "..", e.gallery))) {
+        fs.unlinkSync(path.join(__dirname, "..", e.gallery));
+      }
+    });
+    Gallery.deleteMany({ userId: req.params.id },(e)=>{
+      if(e){
+        console.log(e.message);
+      }
+    });
     Admin.findByIdAndDelete(req.params.id, (err) => {
       if (err) {
         console.log("record not deleted");
@@ -125,7 +137,7 @@ module.exports.updatePostUser = async (req, res) => {
             return false;
           }
           if (admin.avatar) {
-            if(fs.existsSync(path.join(__dirname, "..", admin.avatar))){
+            if (fs.existsSync(path.join(__dirname, "..", admin.avatar))) {
               fs.unlinkSync(path.join(__dirname, "..", admin.avatar));
             }
           }
@@ -257,8 +269,7 @@ module.exports.deleteGalleryImg = async (req, res) => {
   try {
     const image = await Gallery.findById(req.params.id);
     const gImg = image.gallery;
-    console.log(gImg);
-    if(fs.existsSync(path.join(__dirname, "..", gImg))){
+    if (fs.existsSync(path.join(__dirname, "..", gImg))) {
       fs.unlinkSync(path.join(__dirname, "..", gImg));
     }
     // fs.unlinkSync(path.join(__dirname, "..", gImg));
