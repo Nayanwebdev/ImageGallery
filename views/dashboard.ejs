@@ -6,7 +6,7 @@
           <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height: 200px">
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px">
               <img src="<%= locals.user.avatar %>" alt="avatar" class="img-fluid img-thumbnail mt-4 mb-2 h-100 object-fit-cover" style="width: 150px; z-index: 1" />
-              <div class="d-flex gap-2">
+              <div class="d-flex gap-2 action_btn">
                 <a href="/update/<%=user.id%>" type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1">Edit profile</a>
                 <a href="/delete/<%=user.id%>" type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1">Delete profile</a>
               </div>
@@ -16,20 +16,19 @@
               <p><%= locals.user.city %></p>
             </div>
           </div>
-          <div class="p-4 text-black" style="background-color: #f8f9fa">
+          <div class="p-4 text-black person_number" style="background-color: #f8f9fa">
             <div class="d-flex justify-content-end text-center py-1">
-              <div>
-                
+              <div>                
                 <p class="mb-1 h5"><%=images.length%></p>
 
                 <p class="small text-muted mb-0">Photos</p>
               </div>
-              <div class="px-3">
+              <div class="px-3 follower_block">
                 <p class="mb-1 h5">1026</p>
                 <p class="small text-muted mb-0">Followers</p>
               </div>
-              <div>
-                <p class="mb-1 h5">478</p>
+              <div class="follow_block">
+                <p class="mb-1 h5 ">478</p>
                 <p class="small text-muted mb-0">Following</p>
               </div>
             </div>
@@ -37,7 +36,7 @@
           <div class="card-body p-4 text-black">
             <div class="mb-5">
               <p class="lead fw-normal mb-1">About</p>
-              <div class="p-4" style="background-color: #f8f9fa">
+              <div class="p-4 card_detail_box" style="background-color: #f8f9fa">
                 <h3 class="font-italic mb-1"><%= locals.user.designation %></h3>
                 <p class="font-italic mb-1 about_para"><%= locals.user.about %></p>
                 <span class="font-italic mb-1">Lives in <%= locals.user.city %></span>
