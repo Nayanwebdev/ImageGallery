@@ -246,7 +246,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  
+   width: 100px;
   height: 100px;
 }
 @media (max-width: 410px) {
