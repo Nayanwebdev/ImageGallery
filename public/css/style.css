@@ -242,7 +242,7 @@ button {
   font-weight: 600;
 }
 .navbar-brand {
-  background-image: url('https://consulting-web.netlify.app/image/Alphine%20Code%20Logo%20Final.png');
+  background-image: url(https://consulting-web.netlify.app/image/Alphine%20Code%20Logo%20Final.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
